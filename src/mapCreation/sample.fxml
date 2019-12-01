@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="mapCreation.Controller">
+    <center>
+        <Pane fx:id="gameWindow" onMouseClicked="#MouseClicked" onMouseDragged="#MouseDragged"
+              onMouseMoved="#MouseMoved" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+    </center>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="File">
+                <MenuItem mnemonicParsing="false" onAction="#handleNewButtonAction" text="New"/>
+                <MenuItem mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Save"/>
+                <MenuItem mnemonicParsing="false" onAction="#handleLoadButtonAction" text="Load"/>
+                <MenuItem mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Close"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Settings">
+                <MenuItem mnemonicParsing="false" onAction="#handleSizeButtonAction" text="Window Size"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <MenuItem mnemonicParsing="false" text="About"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <left>
+        <VBox id="left" prefHeight="368.0" prefWidth="57.0" BorderPane.alignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                    onAction="#handleWallButtonAction" text="Wall"/>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                    onAction="#handleFloorButtonAction" text="Floor"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  X = " wrappingWidth="45.6708984375" fx:id="xpos"/>
+            <Text fx:id="ypos" strokeType="OUTSIDE" strokeWidth="0.0" text="  Y = "/>
+        </VBox>
+    </left>
+</BorderPane>
